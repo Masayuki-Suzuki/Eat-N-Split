@@ -2,7 +2,7 @@ import FormInputField from '../molecues/FormInputField.tsx'
 import Button from '../atoms/Button.tsx'
 import PayerSelector from '../molecues/PayerSelector.tsx'
 import { Friend } from '../App.tsx'
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 type FormSplitBillProps = {
     friend: Friend
@@ -43,10 +43,6 @@ const FormSplitBill = ({ friend, onUpdateFriendBalance }: FormSplitBillProps) =>
         onUpdateFriendBalance(friend.id, balance)
         initialiseState()
     }
-
-    useEffect(() => {
-        initialiseState()
-    }, [friend])
 
     return (
         <form className="form-split-bill" onSubmit={onSplitBill}>
